@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSphere - Cloud Computing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <div class="logo-icon">☁</div>
+                <span>CloudSphere</span>
+            </div>
+
+            <nav>
+                <p class="nav-title">MAIN</p>
+
+                <a href="#" class="nav-link active" data-page="dashboard">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#" class="nav-link" data-page="storage">
+                    <span>▤</span> Cloud Storage
+                </a>
+
+                <a href="#" class="nav-link" data-page="servers">
+                    <span>▣</span> Virtual Machines
+                </a>
+
+                <a href="#" class="nav-link" data-page="database">
+                    <span>◈</span> Database
+                </a>
+
+                <a href="#" class="nav-link" data-page="network">
+                    <span>◎</span> Network
+                </a>
+
+                <p class="nav-title">MANAGEMENT</p>
+
+                <a href="#" class="nav-link" data-page="analytics">
+                    <span>◫</span> Analytics
+                </a>
+
+                <a href="#" class="nav-link" data-page="security">
+                    <span>◆</span> Security
+                </a>
+
+                <a href="#" class="nav-link" data-page="settings">
+                    <span>⚙</span> Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="support-box">
+                    <div class="support-icon">?</div>
+                    <div>
+                        <strong>Need Help?</strong>
+                        <small>Contact support</small>
+                    </div>
+                </div>
+
+                <div class="user-mini">
+                    <div class="avatar">JD</div>
+                    <div>
+                        <strong>John Doe</strong>
+                        <small>Administrator</small>
+                    </div>
+                    <span>⋮</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-btn" id="menuBtn">☰</button>
+
+                    <div>
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p>Welcome back, John 👋</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+
+                    <div class="search">
+                        <span>⌕</span>
+                        <input type="text" id="searchInput" placeholder="Search...">
+                    </div>
+
+                    <button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button>
+
+                    <button class="icon-btn notification-btn" id="notificationBtn">
+                        ♢
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="header-avatar">JD</div>
+                </div>
+            </header>
+
+            <!-- Dashboard -->
+            <section class="page active-page" id="dashboard">
+
+                <div class="welcome-card">
+                    <div>
+                        <span class="badge">CLOUD STATUS: OPERATIONAL</span>
+                        <h2>Your cloud infrastructure is healthy.</h2>
+                        <p>Monitor and manage all your cloud resources from one place.</p>
+
+                        <button class="primary-btn" id="deployBtn">
+                            + Deploy Resource
+                        </button>
+                    </div>
+
+                    <div class="cloud-illustration">
+                        ☁️
+                        <div class="server-circle">▣</div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon blue">▦</span>
+                            <span class="positive">+12.5%</span>
+                        </div>
+                        <h3>24</h3>
+                        <p>Active Resources</p>
+                        <div class="mini-chart blue-chart"></div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon purple">☁</span>
+                            <span class="positive">+8.2%</span>
+                        </div>
+                        <h3>684 GB</h3>
+                        <p>Storage Used</p>
+                        <div class="progress">
+                            <span style="width: 68%"></span>
+                        </div>
+                        <small>68% of 1 TB</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon orange">◉</span>
+                            <span class="negative">-3.1%</span>
+                        </div>
+                        <h3>$248.40</h3>
+                        <p>Monthly Cost</p>
+                        <div class="mini-chart orange-chart"></div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon green">↯</span>
+                            <span class="positive">99.99%</span>
+                        </div>
+                        <h3>99.98%</h3>
+                        <p>System Uptime</p>
+                        <div class="uptime-bars">
+                            <i></i><i></i><i></i><i></i><i></i>
+                            <i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content-grid">
+
+                    <!-- Resource Usage -->
+                    <div class="panel large-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Resource Usage</h3>
+                                <p>CPU utilization over the last 24 hours</p>
+                            </div>
+
+                            <select id="chartPeriod">
+                                <option>Last 24 hours</option>
+                                <option>Last 7 days</option>
+                                <option>Last 30 days</option>
+                            </select>
+                        </div>
+
+                        <div class="chart">
+                            <div class="y-axis">
+                                <span>100%</span>
+                                <span>75%</span>
+                                <span>50%</span>
+                                <span>25%</span>
+                                <span>0%</span>
+                            </div>
+
+                            <div class="chart-area">
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+
+                                <svg viewBox="0 0 800 240" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#4f7cff" stop-opacity=".35"/>
+                                            <stop offset="100%" stop-color="#4f7cff" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <path class="area-path"
+                                        d="M0,180
+                                        C50,165 65,150 100,160
+                                        C135,170 145,115 180,125
+                                        C215,135 225,95 260,105
+                                        C295,115 310,145 340,130
+                                        C370,115 380,70 420,90
+                                        C460,110 470,135 500,115
+                                        C530,95 550,55 580,70
+                                        C610,85 630,125 660,105
+                                        C690,85 710,120 740,95
+                                        C765,75 780,80 800,55
+                                        L800,240 L0,240 Z"/>
+
+                                    <path class="line-path"
+                                        d="M0,180
+                                        C50,165 65,150 100,160
+                                        C135,170 145,115 180,125
+                                        C215,135 225,95 260,105
+                                        C295,115 310,145 340,130
+                                        C370,115 380,70 420,90
+                                        C460,110 470,135 500,115
+                                        C530,95 550,55 580,70
+                                        C610,85 630,125 660,105
+                                        C690,85 710,120 740,95
+                                        C765,75 780,80 800,55"/>
+                                </svg>
+
+                                <div class="x-axis">
+                                    <span>00:00</span>
+                                    <span>04:00</span>
+                                    <span>08:00</span>
+                                    <span>12:00</span>
+                                    <span>16:00</span>
+                                    <span>20:00</span>
+                                    <span>24:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Manage your resources</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-actions">
+                            <button class="action-card" data-action="server">
+                                <span class="action-icon blue">▣</span>
+                                <div>
+                                    <strong>Create VM</strong>
+                                    <small>Launch a virtual machine</small>
+                                </div>
+                                <span>›</span>
+                            </button>
+
+                            <button class="action-card" data-action="storage">
+                                <span class="action-icon purple">☁</span>
+                                <div>
+                                    <strong>Upload Files</strong>
+                                    <small>Add files to cloud storage</small>
+                                </div>
+                                <span>›</span>
+                            </button>
+
+                            <button class="action-card" data-action="database">
+                                <span class="action-icon green">◈</span>
+                                <div>
+                                    <strong>Create Database</strong>
+                                    <small>Deploy a new database</small>
+                                </div>
+                                <span>›</span>
+                            </button>
+
+                            <button class="action-card" data-action="network">
+                                <span class="action-icon orange">◎</span>
+                                <div>
+                                    <strong>Configure Network</strong>
+                                    <small>Manage network settings</small>
+                                </div>
+                                <span>›</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Recent Resources -->
+                <div class="panel resources-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Resources</h3>
+                            <p>Your recently created cloud resources</p>
+                        </div>
+
+                        <button class="text-btn">View All →</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>RESOURCE</th>
+                                    <th>TYPE</th>
+                                    <th>STATUS</th>
+                                    <th>REGION</th>
+                                    <th>CREATED</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="resourceTable">
+
+                                <tr>
+                                    <td>
+                                        <div class="resource-name">
+                                            <span class="resource-icon blue">▣</span>
+                                            web-server-01
+                                        </div>
+                                    </td>
+                                    <td>Virtual Machine</td>
+                                    <td><span class="status running">Running</span></td>
+                                    <td>Asia Pacific</td>
+                                    <td>Today, 10:32 AM</td>
+                                    <td><button class="more-btn">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="resource-name">
+                                            <span class="resource-icon purple">☁</span>
+                                            project-storage
+                                        </div>
+                                    </td>
+                                    <td>Object Storage</td>
+                                    <td><span class="status running">Active</span></td>
+                                    <td>Asia Pacific</td>
+                                    <td>Today, 09:15 AM</td>
+                                    <td><button class="more-btn">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="resource-name">
+                                            <span class="resource-icon green">◈</span>
+                                            production-db
+                                        </div>
+                                    </td>
+                                    <td>Database</td>
+                                    <td><span class="status running">Running</span></td>
+                                    <td>US East</td>
+                                    <td>Yesterday</td>
+                                    <td><button class="more-btn">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="resource-name">
+                                            <span class="resource-icon orange">◎</span>
+                                            api-network
+                                        </div>
+                                    </td>
+                                    <td>Virtual Network</td>
+                                    <td><span class="status warning">Warning</span></td>
+                                    <td>Europe West</td>
+                                    <td>Yesterday</td>
+                                    <td><button class="more-btn">•••</button></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Other Pages -->
+            <section class="page" id="storage">
+                <div class="page-heading">
+                    <h2>Cloud Storage</h2>
+                    <p>Store, manage and access your files securely.</p>
+                </div>
+
+                <div class="storage-overview">
+                    <div class="storage-circle">
+                        <div>
+                            <strong>68%</strong>
+                            <small>Used</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>684 GB of 1 TB</h3>
+                        <p>You have 316 GB of available storage.</p>
+                        <button class="primary-btn" id="uploadBtn">↑ Upload Files</button>
+                    </div>
+                </div>
+
+                <div class="file-grid">
+                    <div class="file-card">📁 <strong>Documents</strong><small>124 files · 84 GB</small></div>
+                    <div class="file-card">📁 <strong>Projects</strong><small>86 files · 210 GB</small></div>
+                    <div class="file-card">📁 <strong>Images</strong><small>352 files · 145 GB</small></div>
+                    <div class="file-card">📁 <strong>Backups</strong><small>42 files · 245 GB</small></div>
+                </div>
+            </section>
+
+            <section class="page" id="servers">
+                <div class="page-heading">
+                    <h2>Virtual Machines</h2>
+                    <p>Create and manage your cloud servers.</p>
+                    <button class="primary-btn create-resource">+ Create VM</button>
+                </div>
+
+                <div class="server-grid">
+                    <div class="server-card">
+                        <div class="server-header">
+                            <span class="server-status"></span>
+                            <strong>web-server-01</strong>
+                            <span>•••</span>
+                        </div>
+                        <p>Ubuntu 24.04 · 4 vCPU · 8 GB RAM</p>
+                        <div class="server-metrics">
+                            <div><small>CPU</small><strong>42%</strong></div>
+                            <div><small>RAM</small><strong>61%</strong></div>
+                            <div><small>Disk</small><strong>38%</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="server-card">
+                        <div class="server-header">
+                            <span class="server-status"></span>
+                            <strong>api-server-01</strong>
+                            <span>•••</span>
+                        </div>
+                        <p>Ubuntu 24.04 · 2 vCPU · 4 GB RAM</p>
+                        <div class="server-metrics">
+                            <div><small>CPU</small><strong>28%</strong></div>
+                            <div><small>RAM</small><strong>47%</strong></div>
+                            <div><small>Disk</small><strong>24%</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="database">
+                <div class="page-heading">
+                    <h2>Database</h2>
+                    <p>Manage your cloud databases.</p>
+                    <button class="primary-btn create-resource">+ Create Database</button>
+                </div>
+
+                <div class="database-card">
+                    <div class="db-icon">◈</div>
+                    <div>
+                        <h3>production-db</h3>
+                        <p>PostgreSQL · 8 GB · Asia Pacific</p>
+                    </div>
+                    <span class="status running">Running</span>
+                </div>
+            </section>
+
+            <section class="page" id="network">
+                <div class="page-heading">
+                    <h2>Network</h2>
+                    <p>Configure your cloud networking infrastructure.</p>
+                </div>
+
+                <div class="network-card">
+                    <div class="network-diagram">
+                        <div class="network-node">🌐<small>Internet</small></div>
+                        <div class="network-line"></div>
+                        <div class="network-node">◎<small>VPC</small></div>
+                        <div class="network-line"></div>
+                        <div class="network-node">▣<small>Servers</small></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="analytics">
+                <div class="page-heading">
+                    <h2>Analytics</h2>
+                    <p>Monitor cloud usage and performance.</p>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <span>Monthly Cost</span>
+                        <strong>$248.40</strong>
+                        <small>↓ 3.1% from last month</small>
+                    </div>
+
+                    <div class="analytics-card">
+                        <span>Requests</span>
+                        <strong>2.84M</strong>
+                        <small>↑ 12.8% from last month</small>
+                    </div>
+
+                    <div class="analytics-card">
+                        <span>Bandwidth</span>
+                        <strong>1.42 TB</strong>
+                        <small>↑ 6.4% from last month</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="security">
+                <div class="page-heading">
+                    <h2>Security</h2>
+                    <p>Protect your cloud infrastructure.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-check">✓</div>
+                    <div>
+                        <h3>Security Status: Excellent</h3>
+                        <p>All critical security checks are passing.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="settings">
+                <div class="page-heading">
+                    <h2>Settings</h2>
+                    <p>Manage your CloudSphere account.</p>
+                </div>
+
+                <div class="settings-card">
+                    <label>Account Name</label>
+                    <input value="John Doe">
+
+                    <label>Email</label>
+                    <input value="john@example.com">
+
+                    <label>Default Region</label>
+                    <select>
+                        <option>Asia Pacific</option>
+                        <option>US East</option>
+                        <option>Europe West</option>
+                    </select>
+
+                    <button class="primary-btn">Save Changes</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <div>
+            <strong id="toastTitle">Success</strong>
+            <p id="toastMessage">Operation completed.</p>
+        </div>
+        <button id="closeToast">×</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
